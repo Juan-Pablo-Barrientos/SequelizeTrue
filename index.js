@@ -4,7 +4,10 @@ const app = express();
 require ("dotenv").config();
 app.use(express.json());
 const server = http.createServer(app);
-
+//Añadimos estas dos lineas para la conexion
+const router = require("./routes/index");
+app.use(router);
+//
 const port = process.env.PORT || 3000;
 
 server.listen(port, (err) => {
